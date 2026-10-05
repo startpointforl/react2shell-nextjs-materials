@@ -1,0 +1,16 @@
+# deps & build
+node_modules/
+.next/
+.next-webpack/
+.next-turbopack/
+*.tsbuildinfo
+next-env.d.ts
+
+# os / editor
+.DS_Store
+*.log
+
+# секреты не коммитим (в репозитории их и не должно быть)
+.env
+.env.*
+!.env.example
