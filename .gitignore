@@ -6,6 +6,11 @@ node_modules/
 *.tsbuildinfo
 next-env.d.ts
 
+# dist коммитим только для тула (чтобы `npx` не собирал ничего у слушателей)
+dist/
+!tools/server-action-audit/dist/
+!tools/server-action-audit/dist/**
+
 # os / editor
 .DS_Store
 *.log

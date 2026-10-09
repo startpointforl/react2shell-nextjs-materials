@@ -1,0 +1,23 @@
+{
+  "name": "react2shell-nextjs-materials",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Материалы к докладу HolyJS «Добро пожаловать на сервер: где в Next.js App Router прячутся уязвимости». Включает server-action-audit — статический анализ кода Server Actions.",
+  "type": "module",
+  "bin": {
+    "server-action-audit": "tools/server-action-audit/dist/cli.js"
+  },
+  "scripts": {
+    "audit:actions": "node tools/server-action-audit/dist/cli.js",
+    "build:tool": "npm --prefix tools/server-action-audit run build",
+    "test:tool": "npm --prefix tools/server-action-audit test"
+  },
+  "dependencies": {
+    "@typescript-eslint/typescript-estree": "8.71.1",
+    "typescript": "~5.9.3"
+  },
+  "engines": {
+    "node": ">=18.18"
+  },
+  "license": "MIT"
+}

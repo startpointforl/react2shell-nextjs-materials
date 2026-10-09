@@ -33,6 +33,14 @@ Components — через архитектуру Flight-протокола и д
 - **[cve-2025-55184-dos/](./exploits/cve-2025-55184-dos/)** — DoS: поток сервера уходит
   в бесконечный цикл, CPU ~100% (`poc-55184.js`).
 
+### [tools/server-action-audit/](./tools/server-action-audit/)
+
+**Статический анализ кода Server Actions.** CLI, который читает AST ваших серверных экшенов и
+показывает места, связанные с React2Shell (стрингинфай аргумента → 55183, захардкоженные секреты,
+секрет через `.bind()`), плюс гигиену (мутации без auth/валидации, опасные sinks, mass assignment,
+утечка через `return`). Это **не сканер версий** и **не доказательство уязвимости** — указатель,
+куда посмотреть. Подробности и честный список ограничений — в [README тула](./tools/server-action-audit/).
+
 ## Быстрый старт
 
 ```bash
@@ -48,6 +56,16 @@ node poc-55184.js
 ```
 
 Подробности и ожидаемый вывод — в README каждого примера.
+
+### Прогнать анализатор Server Actions
+
+```bash
+# на уязвимой мишени из этого репозитория (поймает leakyAction как HIGH)
+npx github:startpointforl/react2shell-nextjs-materials ./vulnerable-target
+
+# на своём проекте
+npx github:startpointforl/react2shell-nextjs-materials ./path/to/your-app
+```
 
 ## ⚠️ Дисклеймер
 

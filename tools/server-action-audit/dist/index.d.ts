@@ -1,0 +1,6 @@
+export { scan } from './scan.js';
+export type { ScanOptions } from './scan.js';
+export { renderText } from './report/text.js';
+export { renderJson } from './report/json.js';
+export { ALL_RULES, CVE_RULES, HYGIENE_RULES, rulesFor } from './rules/index.js';
+export * from './types.js';

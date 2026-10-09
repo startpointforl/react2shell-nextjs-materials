@@ -1,0 +1,32 @@
+{
+  "name": "server-action-audit",
+  "version": "0.1.0",
+  "description": "Статический анализ кода Server Actions (React Server Components / Next.js App Router): где у вас потенциально слабые места",
+  "type": "module",
+  "bin": {
+    "server-action-audit": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json && chmod +x dist/cli.js",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "engines": {
+    "node": ">=18.18"
+  },
+  "dependencies": {
+    "@typescript-eslint/typescript-estree": "8.71.1",
+    "typescript": "~5.9.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "vitest": "^3.2.0"
+  },
+  "license": "MIT"
+}
